@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import backhand.StockProjectJava.business.Abstracts.ProductService;
+import backhand.StockProjectJava.core.utilities.results.DataResult;
+import backhand.StockProjectJava.core.utilities.results.SuccessDataResult;
 import backhand.StockProjectJava.dataAccess.Abstracts.ProductDao;
 import backhand.StockProjectJava.entities.Concretes.Product;
 
@@ -21,6 +23,15 @@ public class ProductManager implements ProductService{
 	@Override
 	public List<Product> getAll() {
 		return this.productDao.findAll();
+	}
+	@Override
+	public void add(Product product) {
+	 	this.productDao.save(product);
+		
+	}
+	@Override
+	public DataResult<Product> getByProductName(String productName) {
+		return new SuccessDataResult<Product>(this.productDao.getByProductName(productName),"Listelendi");
 	}
 
 }

@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import backhand.StockProjectJava.business.Abstracts.ProductOutputService;
+import backhand.StockProjectJava.core.utilities.results.DataResult;
 import backhand.StockProjectJava.entities.Concretes.ProductOutput;
 
 @RestController
-@RequestMapping("/api/productoutput")
+@RequestMapping("/api/productoutputs")
 public class ProductOutputsController {
 
 	private ProductOutputService productOutputService;
@@ -24,5 +25,9 @@ public class ProductOutputsController {
 	@GetMapping("/getall")
 	List<ProductOutput> getAll(){
 		return this.productOutputService.getAll();
+	}
+	@GetMapping("/getProductOutput")
+	public DataResult<List<ProductOutput>> getByProductOutputIdAndProductId(int productOutputId,int productId){
+		return this.productOutputService.getByProductOutputIdAndProductId(productOutputId, productId);
 	}
 }

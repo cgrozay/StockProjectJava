@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import backhand.StockProjectJava.business.Abstracts.ProductIntroductionService;
+import backhand.StockProjectJava.core.utilities.results.DataResult;
 import backhand.StockProjectJava.entities.Concretes.ProductIntroduction;
 
 @RestController
@@ -25,5 +26,10 @@ public class ProductIntroductionsController {
 	public List<ProductIntroduction> getAll() {
 		
 		return this.productIntroductionService.getAll();
+	}
+	@GetMapping("/getProductIntroductionIdAndProductId")
+	public DataResult<List<ProductIntroduction>> getByProductIntroductionIdAndProductId(int productIntroductionId,
+			int productId) {
+		return this.productIntroductionService.getByProductIntroductionIdAndProductId(productIntroductionId, productId);
 	}
 }

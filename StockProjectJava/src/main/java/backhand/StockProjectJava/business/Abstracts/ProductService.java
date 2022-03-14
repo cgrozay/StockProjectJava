@@ -11,4 +11,7 @@ public interface ProductService {
 	void add(Product product);
 	
 	DataResult<Product>  getByProductName(String productName);
+	
+	
+	
 }

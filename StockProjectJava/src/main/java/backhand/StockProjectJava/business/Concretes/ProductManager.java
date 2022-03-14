@@ -33,5 +33,7 @@ public class ProductManager implements ProductService{
 	public DataResult<Product> getByProductName(String productName) {
 		return new SuccessDataResult<Product>(this.productDao.getByProductName(productName),"Listelendi");
 	}
+	
+	
 
 }

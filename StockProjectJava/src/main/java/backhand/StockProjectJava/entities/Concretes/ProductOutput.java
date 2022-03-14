@@ -5,7 +5,10 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -20,12 +23,12 @@ import lombok.NoArgsConstructor;
 public class ProductOutput {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "product_output_id")
 	private int productOutputId;
 	
-	@Column(name = "product_id")
-	private int productId;
+	//@Column(name = "product_id")
+	//private int productId;
 	
 	@Column(name = "unit_type")
 	private int unitType;
@@ -38,4 +41,8 @@ public class ProductOutput {
 	
 	@Column(name = "department_id")
 	private int departmentId;
+	
+	@ManyToOne()
+	@JoinColumn(name = "product_id")
+	private Product product;
 }

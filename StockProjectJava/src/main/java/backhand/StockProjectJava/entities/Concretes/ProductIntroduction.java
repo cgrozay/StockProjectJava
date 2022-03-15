@@ -35,7 +35,7 @@ public class ProductIntroduction {
 	@Column(name="amount")
 	private double amount;
 	
-	@Column(name="unit_type")
+	@Column(name="unit_type_id")
 	private int unitType;
 	
 	//@Column(name = "company_id")

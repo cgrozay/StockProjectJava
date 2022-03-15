@@ -38,9 +38,16 @@ public class ProductIntroduction {
 	@Column(name="unit_type")
 	private int unitType;
 	
+	//@Column(name = "company_id")
+	//private int companyId;
+	
 	@ManyToOne()
 	@JoinColumn(name = "product_id")
 	private Product product;
+	
+	@ManyToOne()
+	@JoinColumn(name = "company_id")
+	private Company company;
 	
 	
 }

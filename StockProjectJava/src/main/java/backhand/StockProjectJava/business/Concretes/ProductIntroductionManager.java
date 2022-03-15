@@ -32,6 +32,13 @@ public class ProductIntroductionManager implements ProductIntroductionService {
 	public DataResult<List<ProductIntroduction>> getByProductIntroductionIdAndProductId(int productIntroductionId,
 			int productId) {
 		
-		return new SuccessDataResult<List<ProductIntroduction>>(this.productIntroductionDao.getByProductIntroductionIdAndProduct_ProductId(productIntroductionId, productId));
+		return new SuccessDataResult<List<ProductIntroduction>>(this.productIntroductionDao.getByProductIntroductionIdAndProduct_ProductId(productIntroductionId, productId),"Listelendi");
+	}
+
+	@Override
+	public DataResult<List<ProductIntroduction>> getByProductIntroductionIdAndCompanyId(int productIntroductionId,
+			int companyId) {
+		
+		return new SuccessDataResult<List<ProductIntroduction>>(this.productIntroductionDao.getByProductIntroductionIdAndCompany_CompanyId(productIntroductionId, companyId),"Listelendi");
 	}
 }

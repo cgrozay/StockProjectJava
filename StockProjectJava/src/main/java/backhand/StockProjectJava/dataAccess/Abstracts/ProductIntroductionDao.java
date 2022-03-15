@@ -7,11 +7,15 @@ import org.springframework.data.jpa.repository.Query;
 
 import backhand.StockProjectJava.entities.Concretes.ProductIntroduction;
 
-public interface ProductIntroductionDao extends JpaRepository<ProductIntroduction, Integer>{
-	
-	
-	List<ProductIntroduction> getByProductIntroductionIdAndProduct_ProductId(int productIntroductionId,int productId);
-	
+public interface ProductIntroductionDao extends JpaRepository<ProductIntroduction, Integer> {
+
+	List<ProductIntroduction> getByProductIntroductionIdAndProduct_ProductId(int productIntroductionId, int productId);
+
 	@Query("From ProductIntroduction where productIntroductionId=:productIntroductionId and product.productId=:productId")
-	List<ProductIntroduction> getByProductIntroductionIdAndProduct(int productIntroductionId,int productId);
+	List<ProductIntroduction> getByProductIntroductionIdAndProduct(int productIntroductionId, int productId);
+
+	List<ProductIntroduction> getByProductIntroductionIdAndCompany_CompanyId(int productIntroductionId, int companyId);
+
+	@Query("From ProductIntroduction where productIntroductionId=:productIntroductionId and company.companyId=:companyId")
+	List<ProductIntroduction> getByProductIntroductionIdAndCompany(int productIntroductionId, int companyId); 
 }

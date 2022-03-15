@@ -12,7 +12,7 @@ import backhand.StockProjectJava.core.utilities.results.DataResult;
 import backhand.StockProjectJava.entities.Concretes.ProductIntroduction;
 
 @RestController
-@RequestMapping("/api/productsintroduction")
+@RequestMapping("/api/productintroductions")
 public class ProductIntroductionsController {
 
 	private ProductIntroductionService productIntroductionService;
@@ -31,5 +31,9 @@ public class ProductIntroductionsController {
 	public DataResult<List<ProductIntroduction>> getByProductIntroductionIdAndProductId(int productIntroductionId,
 			int productId) {
 		return this.productIntroductionService.getByProductIntroductionIdAndProductId(productIntroductionId, productId);
+	}
+	@GetMapping("/getByProductIntroductionIdAndCompanyId")
+	public DataResult<List<ProductIntroduction>> getByProductIntroductionIdAndCompanyId(int productIntroductionId,int companyId){
+		return this.productIntroductionService.getByProductIntroductionIdAndCompanyId(productIntroductionId, companyId);
 	}
 }

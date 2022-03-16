@@ -35,11 +35,19 @@ public class ProductIntroduction {
 	@Column(name="amount")
 	private double amount;
 	
+	@Column(name = "unit_price")
+	private double unitPrice;
+	
 	@Column(name="unit_type_id")
 	private int unitType;
 	
 	//@Column(name = "company_id")
 	//private int companyId;
+	
+	
+	@ManyToOne()
+	@JoinColumn(name = "category_id")
+	private Category category;
 	
 	@ManyToOne()
 	@JoinColumn(name = "product_id")

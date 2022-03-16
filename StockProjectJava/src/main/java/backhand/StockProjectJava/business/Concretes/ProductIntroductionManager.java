@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import backhand.StockProjectJava.business.Abstracts.ProductIntroductionService;
 import backhand.StockProjectJava.core.utilities.results.DataResult;
+import backhand.StockProjectJava.core.utilities.results.Result;
 import backhand.StockProjectJava.core.utilities.results.SuccessDataResult;
+import backhand.StockProjectJava.core.utilities.results.SuccessResult;
 import backhand.StockProjectJava.dataAccess.Abstracts.ProductIntroductionDao;
 import backhand.StockProjectJava.entities.Concretes.ProductIntroduction;
 
@@ -40,5 +42,11 @@ public class ProductIntroductionManager implements ProductIntroductionService {
 			int companyId) {
 		
 		return new SuccessDataResult<List<ProductIntroduction>>(this.productIntroductionDao.getByProductIntroductionIdAndCompany_CompanyId(productIntroductionId, companyId),"Listelendi");
+	}
+
+	@Override
+	public Result add(ProductIntroduction produtIntroduction) {
+		this.productIntroductionDao.save(produtIntroduction);
+		return new SuccessResult("Malzeme Girişi Tamlandı");
 	}
 }

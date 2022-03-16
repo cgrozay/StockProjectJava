@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -37,6 +39,8 @@ public class Product {
 	
 	
 	@Column(name="product_name")
+	@NotBlank(message = "Doğru veri giriniz...")
+	@NotNull(message = "Boş geçilemez...")
 	private String productName;
 	
 	@ManyToOne()

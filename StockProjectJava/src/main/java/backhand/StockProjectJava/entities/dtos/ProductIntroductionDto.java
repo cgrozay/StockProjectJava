@@ -1,4 +1,4 @@
-package backhand.StockProjectJava.entities.dto;
+package backhand.StockProjectJava.entities.dtos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

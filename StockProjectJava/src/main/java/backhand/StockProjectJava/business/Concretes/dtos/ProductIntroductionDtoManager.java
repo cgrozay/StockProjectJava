@@ -1,15 +1,15 @@
-package backhand.StockProjectJava.business.Concretes.dtoConcrete;
+package backhand.StockProjectJava.business.Concretes.dtos;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import backhand.StockProjectJava.business.Abstracts.dtoAbstract.ProductIntroductionDtoService;
+import backhand.StockProjectJava.business.Abstracts.dtos.ProductIntroductionDtoService;
 import backhand.StockProjectJava.core.utilities.results.DataResult;
 import backhand.StockProjectJava.core.utilities.results.SuccessDataResult;
-import backhand.StockProjectJava.dataAccess.dtoDataAccess.ProductIntroductionDtoDao;
-import backhand.StockProjectJava.entities.dto.ProductIntroductionDto;
+import backhand.StockProjectJava.dataAccess.Abstracts.dtos.ProductIntroductionDtoDao;
+import backhand.StockProjectJava.entities.dtos.ProductIntroductionDto;
 @Service
 public class ProductIntroductionDtoManager implements ProductIntroductionDtoService {
 

@@ -1,4 +1,4 @@
-package backhand.StockProjectJava.api.dto;
+package backhand.StockProjectJava.api.dtos;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import backhand.StockProjectJava.business.Abstracts.dtoAbstract.ProductIntroductionDtoService;
+import backhand.StockProjectJava.business.Abstracts.dtos.ProductIntroductionDtoService;
 import backhand.StockProjectJava.core.utilities.results.DataResult;
-import backhand.StockProjectJava.entities.dto.ProductIntroductionDto;
+import backhand.StockProjectJava.entities.dtos.ProductIntroductionDto;
 @RestController
 @RequestMapping("/api/dto")
 public class ProductIntroductionDtoController {

@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import backhand.StockProjectJava.business.Abstracts.ProductService;
 import backhand.StockProjectJava.core.utilities.results.DataResult;
+import backhand.StockProjectJava.core.utilities.results.Result;
 import backhand.StockProjectJava.core.utilities.results.SuccessDataResult;
+import backhand.StockProjectJava.core.utilities.results.SuccessResult;
 import backhand.StockProjectJava.dataAccess.Abstracts.ProductDao;
 import backhand.StockProjectJava.entities.Concretes.Product;
 
@@ -25,8 +27,9 @@ public class ProductManager implements ProductService{
 		return this.productDao.findAll();
 	}
 	@Override
-	public void add(Product product) {
-	 	this.productDao.save(product);
+	public Result add(Product product) {
+		this.productDao.save(product);
+	 	return new SuccessResult("Ürün Eklendi");
 		
 	}
 	@Override

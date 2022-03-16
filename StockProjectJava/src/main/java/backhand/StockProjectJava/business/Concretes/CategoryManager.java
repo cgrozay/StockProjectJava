@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import backhand.StockProjectJava.business.Abstracts.CategoryService;
+import backhand.StockProjectJava.core.utilities.results.Result;
+import backhand.StockProjectJava.core.utilities.results.SuccessResult;
 import backhand.StockProjectJava.dataAccess.Abstracts.CategoryDao;
 
 import backhand.StockProjectJava.entities.Concretes.Category;
@@ -25,5 +27,12 @@ public class CategoryManager implements CategoryService{
 		
 		return this.categoryDao.findAll();
 	}
+
+	@Override
+	public Result add(Category category) {
+		this.categoryDao.save(category);
+		return new SuccessResult("Kategori Eklendi");
+	}
+	
 
 }

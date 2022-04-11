@@ -8,7 +8,7 @@ import backhand.StockProjectJava.entities.Concretes.Product;
 
 public interface ProductService {
 
-	List<Product> getAll();
+	DataResult<List<Product>>  getAll();
 	Result add(Product product);
 	
 	DataResult<Product>  getByProductName(String productName);

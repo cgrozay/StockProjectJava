@@ -7,7 +7,7 @@ import backhand.StockProjectJava.entities.Concretes.ProductOutput;
 
 public interface ProductOutputService {
 
-	List<ProductOutput> getAll();
+	DataResult<List<ProductOutput>>  getAll();
 	
 	DataResult<List<ProductOutput>> getByProductOutputIdAndProductId(int productOutputId,int productId);
 }

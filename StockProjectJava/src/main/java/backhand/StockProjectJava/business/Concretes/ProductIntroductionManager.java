@@ -25,9 +25,9 @@ public class ProductIntroductionManager implements ProductIntroductionService {
 	}
 
 	@Override
-	public List<ProductIntroduction> getAll() {
+	public DataResult<List<ProductIntroduction>>  getAll() {
 		
-		return this.productIntroductionDao.findAll();
+		return new SuccessDataResult<List<ProductIntroduction>>(this.productIntroductionDao.findAll()) ;
 	}
 
 	@Override

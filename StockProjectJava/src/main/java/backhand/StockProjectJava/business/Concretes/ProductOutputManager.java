@@ -22,8 +22,8 @@ public class ProductOutputManager implements ProductOutputService {
 	}
 
 	@Override
-	public List<ProductOutput> getAll() {
-		return this.productOutputDao.findAll();
+	public DataResult<List<ProductOutput>>  getAll() {
+		return new SuccessDataResult<List<ProductOutput>>(this.productOutputDao.findAll());
 	}
 
 	@Override

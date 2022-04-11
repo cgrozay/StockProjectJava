@@ -30,8 +30,8 @@ public class ProductOutput {
 	//@Column(name = "product_id")
 	//private int productId;
 	
-	@Column(name = "unit_type")
-	private int unitType;
+	//@Column(name = "unit_type")
+	//private int unitType;
 	
 	@Column(name ="amount")
 	private double amount;
@@ -45,4 +45,8 @@ public class ProductOutput {
 	@ManyToOne()
 	@JoinColumn(name = "product_id")
 	private Product product;
+	
+	@ManyToOne()
+	@JoinColumn(name = "type_id")
+	private UnitType unitType;
 }

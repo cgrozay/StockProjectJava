@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,7 @@ import backhand.StockProjectJava.entities.Concretes.Product;
 
 @RestController
 @RequestMapping("/api/products")
+@CrossOrigin
 public class ProductsController {
 
 	private ProductService productService;
@@ -38,7 +40,7 @@ public class ProductsController {
 		this.productService = produtService;
 	}
 	@GetMapping("/getall")
-	public List<Product> getAll(){
+	public DataResult<List<Product>>  getAll(){
 		return this.productService.getAll();
 	}
 	@PostMapping("/add")

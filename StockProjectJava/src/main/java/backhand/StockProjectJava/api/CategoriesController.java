@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,12 +20,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import backhand.StockProjectJava.business.Abstracts.CategoryService;
+import backhand.StockProjectJava.core.utilities.results.DataResult;
 import backhand.StockProjectJava.core.utilities.results.ErrorDataResult;
 import backhand.StockProjectJava.core.utilities.results.Result;
 import backhand.StockProjectJava.entities.Concretes.Category;
 
 @RestController
 @RequestMapping("/api/categories")
+@CrossOrigin
 public class CategoriesController {
 
 	private CategoryService categoryService;
@@ -35,7 +38,7 @@ public class CategoriesController {
 		this.categoryService = categoryService;
 	}
 	@GetMapping("/getall")
-	public List<Category> getAll(){
+	public DataResult< List<Category>> getAll(){
 		return this.categoryService.getAll();
 	}
 	@PostMapping("/add")

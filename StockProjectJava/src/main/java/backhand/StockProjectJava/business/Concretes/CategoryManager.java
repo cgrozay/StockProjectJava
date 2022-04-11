@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import backhand.StockProjectJava.business.Abstracts.CategoryService;
+import backhand.StockProjectJava.core.utilities.results.DataResult;
 import backhand.StockProjectJava.core.utilities.results.Result;
+import backhand.StockProjectJava.core.utilities.results.SuccessDataResult;
 import backhand.StockProjectJava.core.utilities.results.SuccessResult;
 import backhand.StockProjectJava.dataAccess.Abstracts.CategoryDao;
 
@@ -23,9 +25,9 @@ public class CategoryManager implements CategoryService{
 	}
 
 	@Override
-	public List<Category> getAll() {
+	public DataResult< List<Category>> getAll() {
 		
-		return this.categoryDao.findAll();
+		return new SuccessDataResult<List<Category>>(this.categoryDao.findAll());
 	}
 
 	@Override
